@@ -1,41 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button} from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from './src/Login';
+import Principal from './src/Principal';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>login</Text>
-      <Text style={styles.label}>Usuário</Text>
-      <TextInput style={styles.input}placeholder="Digite seu usuário" />
-      <Text style={styles.label}>Senha</Text>
-      <TextInput style={styles.input}placeholder="Digite sua senha" secureTextEntry />
-      <Button title="Entrar" onPress={() => alert('Login realizado!')} />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Principal" component={Principal} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  label: {
-    alignSelf: 'flex-start',
-    marginLeft: '10%',
-    marginBottom: 5,
-    fontSize: 16,
-  },
-  input: {
-    width: '80%',
-    height: 40,
-    borderColor: 'gray' ,
-    borderWidth: 1,
-    paddingLeft: 10,
-    marginBottom: 20,
-    borderRadius: 5,
-  },
-
-});
