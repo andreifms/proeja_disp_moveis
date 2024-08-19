@@ -14,24 +14,24 @@ export default function Perfil() {
         <View style={styles.container}>
             <Text style={styles.label}>Nome:</Text>
             <TextInput
-            style={styles.input}
-            placeholder="Digite seu nome"
-            value={nome}
-            onChangeText={setNome}
+                style={styles.input}
+                placeholder="Digite seu nome"
+                value={nome}
+                onChangeText={setNome}
             />
             <Text style={styles.label}>CPF:</Text>
             <TextInput
-            style={styles.input}
-            placeholder="Digite seu CPF"
-            value={cpf}
-            onChangeText={setCpf}
+                style={styles.input}
+                placeholder="Digite seu CPF"
+                value={cpf}
+                onChangeText={setCpf}
             />
             <text style={styles.label}>Endereço:</text>
             <TextInput
-            style={styles.input}
-            placeholder="Digite seu endereco"
-            value={endereco}
-            onChangeText={setEndereco}
+                style={styles.input}
+                placeholder="Digite seu endereco"
+                value={endereco}
+                onChangeText={setEndereco}
             />
             <Button title="Salvar"onPress={salvarDados} />
 
@@ -44,15 +44,15 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#fff',
     },
-label: {
-    fontSize: 18,
-    marginBottom: 5,
-},
-input: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 15,
-    paddingHorizontal: 10,
-},
+    label: {
+        fontSize: 18,
+        marginBottom: 5,
+    },
+    input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 15,
+        paddingHorizontal: 10,
+    },
 });

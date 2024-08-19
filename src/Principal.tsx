@@ -1,19 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './Home';
+import Perfil from './Perfil';
 
-export default function Principal() {
+const Tab = createBottomTabNavigator();
+
+export default function Principal () {
   return (
-    <View style={styles.container}>
-      <Text>Bem-vindo à Tela Principal!</Text>
-    </View>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Perfil" component={Perfil} />
+      </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
